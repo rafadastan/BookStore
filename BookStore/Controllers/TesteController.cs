@@ -44,11 +44,28 @@ namespace BookStore.Controllers
             return Json(autor);
         }
 
-        [Route("minharota/{id}")]
+        [Route("minharota/{id:int}")]
         public string MinhaAction(int id)
         {
             return "Ok! Cheguei na rota!";
         }
 
+        [Route("~/rotaignorada/{id:int}")]
+        public string MinhaAction2(int id)
+        {
+            return "Ok! Cheguei na rota!";
+        }
+
+        [Route("rota/{categoria:alpha:minlength(3)}")]
+        public string MinhaAction3(string categoria)
+        {
+            return "Ok! Cheguei na rota!" + categoria;
+        }
+
+        [Route("rota/estacao/{estacao:(primavera|verao|outono|inverno)}")]
+        public string MinhaAction4(string estacao)
+        {
+            return "Olá, Estamos no " + estacao;
+        }
     }
 }
