@@ -13,6 +13,11 @@ namespace BookStore.Repositories
     {
         private BookStoreDataContext _db = new BookStoreDataContext();
 
+        public AuthorRepository(BookStoreDataContext context)
+        {
+            _db = context;
+        }
+
         public bool Create(Autor autor)
         {
             try
@@ -36,7 +41,7 @@ namespace BookStore.Repositories
         }
 
         public List<Autor> Get()
-        {
+        {         
             return _db.Autores.ToList();
         }
 
