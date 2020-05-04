@@ -1,4 +1,5 @@
 ﻿using BookStore.Domain;
+using BookStore.Filters;
 using System.Web.Mvc;
 
 namespace BookStore.Controllers
@@ -39,6 +40,7 @@ namespace BookStore.Controllers
 
         [HttpPost]
         [ActionName("autor")]
+        [LogActionFilter]
         public JsonResult ActionDois(Autor autor)
         {
             return Json(autor);
@@ -62,7 +64,7 @@ namespace BookStore.Controllers
             return "Ok! Cheguei na rota!" + categoria;
         }
 
-        [Route("rota/estacao/{estacao:(primavera|verao|outono|inverno)}")]
+        [Route("rota/estacao")]
         public string MinhaAction4(string estacao)
         {
             return "Olá, Estamos no " + estacao;

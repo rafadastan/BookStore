@@ -23,9 +23,5 @@ namespace BookStore.RoutesConstraints
             return false;
         }
 
-        public bool Match(HttpContextBase httpContext, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
