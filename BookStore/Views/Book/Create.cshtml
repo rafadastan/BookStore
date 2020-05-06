@@ -1,0 +1,19 @@
+﻿@model BookStore.ViewModels.EditorBookViewModel
+
+@{
+    ViewBag.Title = "Criando um novo livro";
+}
+
+<h2>Novo Livro</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Partial("Partials/EditorBookPartial", Model)
+
+    <button type="submit" class="btn btn-primary">Criar</button>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
